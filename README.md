@@ -17,6 +17,7 @@ tsc --init
 ### Ejecución, compilacion y tips
 * tsc app.ts --> compila el programa generando los archivos .js
 * tsc app.ts -w --> compila y mantiene activo a los cambios
+* ts-node app.ts compila los dos comandos anteriores a la vez
 * par mantener una ejecución activa utilizat nodemon archiv.js y tsc archivo.ts -w en terminales distintas.
 #### Si se genero el archivo de configuracion
 ```
