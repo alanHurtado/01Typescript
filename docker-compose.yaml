@@ -1,0 +1,8 @@
+services:
+  shopteslodb:
+    image: mongo:5.0.0
+    container_name: api-rest-type
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongo:/data/api-rest-type
