@@ -7,7 +7,6 @@
     "dev": "tsc-watch --onSuccess \"node disnt/app.js\" ",
     "buil": "tsc",
     "start": "node disnt/app.js",
-
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,6 +30,7 @@
     "@types/passport": "^1.0.11",
     "@types/passport-jwt": "^3.0.7",
     "bcrypt": "^5.1.0",
+    "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",

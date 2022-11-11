@@ -1,7 +1,8 @@
 export default {
-  DB:{
-    URI:process.env.MONGODB_URI ||'mongodb://loaclhost/api-rest-type',
+  jwtSecret: process.env.JWT_SECRET || "somesecretoken",
+  DB: {
+    URI: process.env.MONGODB_URI || "mongodb://localhost:27017",
     USER: process.env.MONGODB_USER,
-    PASSWORD: process.env.MONGODB_PASSWORD
-  }
-}
+    PASSWORD: process.env.MONGODB_PASSWORD,
+  },
+};

@@ -15,9 +15,6 @@ var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (
 }) : function(o, v) {
     o["default"] = v;
 });
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
 var __importStar = (this && this.__importStar) || function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
@@ -26,7 +23,23 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.db = void 0;
-__exportStar(require("./models/server"), exports);
-exports.db = __importStar(require("./db/database"));
-//# sourceMappingURL=index.js.map
+const mongoose_1 = __importStar(require("mongoose"));
+const userSchema = new mongoose_1.Schema({
+    name: { type: String, required: true },
+    email: { type: String, requiered: true, unique: true },
+    password: { type: String, requered: true },
+    role: {
+        type: String,
+        enum: {
+            values: ["admin", "client"],
+            message: "{VALUE} no es un rol válido",
+            default: "client",
+            required: true,
+        },
+    },
+}, {
+    timestamps: true,
+});
+const User = mongoose_1.default.models.User || (0, mongoose_1.model)("User", userSchema);
+exports.default = User;
+//# sourceMappingURL=user.js.map
